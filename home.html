@@ -309,7 +309,7 @@ function office(){
 
 function getId(){
         $.ajax({
-        url:"getJobId.php",
+        url:"https://johnrayopulento.000webhostapp.com/deped/getJobId.php",
         dataType:"json",
         method:"GET",
         success:function(response){
@@ -409,7 +409,7 @@ function getId(){
             var jsonString = JSON.stringify(yourArray);
             console.log(jsonString)
             $.ajax({
-                url: "insert.php?issues="+yourArray,
+                url: "https://johnrayopulento.000webhostapp.com/deped/insert.php?issues="+yourArray,
                 method: "POST",
                 data:{job_order: job_order, requested_by: requested_by, office:  office, issue_cat: issue_cat, main_issue: main_issue, other_issue: other_issue , client: client, school: school
                  },
