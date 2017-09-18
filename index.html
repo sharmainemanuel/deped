@@ -33,7 +33,7 @@
                 <div class="container">
                     <div class="white-text text-center">
                         <h2 style="color:#000">DCP Monitoring System</h2>
-                            <center>      <img src="img/ictulogo.png" class="img-responsive" width="35%" height="60%"></center>
+                            <center>      <img src="img/ictulogo.png" class="img-responsive" width="20%" height="20%"></center>
                             <button class="btn blue-gradient btn-rounded" data-toggle="modal" data-target="#modalLoginAvatarDemo">Log In</button>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                     </div>
                     <!--Body-->
                     <form id="loginform">
-                    <div class="modal-body text-center mb-1">
+						<div class="modal-body text-center mb-1">
                         <div class="md-form ml-0 mr-0">
                             <input type="text" type="text" id="userkey" class="form-control ml-0">
                             <label for="userkey" class="ml-0">Enter Username</label>
@@ -95,6 +95,7 @@
             var user = $('#userkey').val();
             var pass = $('#passkey').val();
             //alert("hello" + user);
+			location.href = 'home.html';
             $.ajax({
                 url: "https://johnrayopulento.000webhostapp.com/deped/login.php?username="+user+"&password="+pass,
                 method: "POST",
