@@ -313,7 +313,7 @@ function getId(){
         dataType:"json",
         method:"GET",
         success:function(response){
-           
+			alert(response);
             var data ="";
 			var prevJobOrder= "";
 			var newJobOrder = ""; 
@@ -323,14 +323,14 @@ function getId(){
 				data += response[i].fld_jobOrder;
             }
             //$('#job-order').html(data)
-     $('#job-order').val(newJobOrder);
+			$('#job-order').val(newJobOrder);
             console.log(newJobOrder)
-			alert("Job Order No:");
+			alert("Job Order No:" +newJobOrder);
 			
         },
-        error:function(err){
+        error:function(req, status, err){
             console.log(err)
-			alert(err);
+			alert(req + status + err);
             
         }
     })
@@ -422,8 +422,8 @@ function getId(){
                     //location.reload();
                     location.reload();
                 },
-                error: function(response){
-                    alert("errror" +response);
+                error: function(req, status, err){
+                    alert("errror" +req + status + err);
                    location.reload();
                     // alert("THERE IS SOME ERROR");
                 }
