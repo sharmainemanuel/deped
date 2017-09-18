@@ -324,9 +324,12 @@ function getId(){
             $('#job-order').html(data)
      $('#job-order').val(newJobOrder);
             console.log(newJobOrder)
+			alert("Job Order No:" + newJobOrder);
+			
         },
         error:function(err){
             console.log(err)
+			alert(err);
             
         }
     })
@@ -419,7 +422,7 @@ function getId(){
                     location.reload();
                 },
                 error: function(response){
-                    alert("Success");
+                    alert("response");
                    location.reload();
                     // alert("THERE IS SOME ERROR");
                 }
