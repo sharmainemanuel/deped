@@ -315,11 +315,12 @@ function getId(){
         success:function(response){
            
             var data ="";
- 
+			var prevJobOrder= "";
+			var newJobOrder = ""; 
             for(i=0;i<response.length;i++){
-              var prevJobOrder = parseInt(response[i].fld_jobOrder);
-              var newJobOrder = prevJobOrder +1;
-            data += response[i].fld_jobOrder;
+				prevJobOrder = parseInt(response[i].fld_jobOrder);
+				newJobOrder = prevJobOrder +1;
+				data += response[i].fld_jobOrder;
             }
             $('#job-order').html(data)
      $('#job-order').val(newJobOrder);
@@ -422,7 +423,7 @@ function getId(){
                     location.reload();
                 },
                 error: function(response){
-                    alert(response);
+                    alert("errror" +response);
                    location.reload();
                     // alert("THERE IS SOME ERROR");
                 }
