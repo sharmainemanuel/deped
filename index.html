@@ -108,11 +108,13 @@
                     }
                 },
 				  error: function (xmlHttpRequest, textStatus, errorThrown) {
-					if(xmlHttpRequest.readyState == 0 || xmlHttpRequest.status == 0) 
+					if(xmlHttpRequest.readyState == 0 || xmlHttpRequest.status == 0){ 
 						return;  // it's not really an error
-					else
+						}
+					else{
 					// Do normal error handling
-					alert("ERROR");
+					alert(xmlHttpRequest.readyState);
+					}
                 }
             });
         });
