@@ -316,16 +316,17 @@ function getId(){
 			var response = JSON.parse(res);
             var data ="";
 			var prevJobOrder= "";
-			var newJobOrder = ""; 
+			var newJobOrder = 0; 
             for(i=0;i<response.length;i++){
 				prevJobOrder = parseInt(response[i].fld_jobOrder);
 				newJobOrder = prevJobOrder +1;
 				data += response[i].fld_jobOrder;
+				alert(newJobOrder);
             }
             //$('#job-order').html(data)
 			$('#job-order').val(newJobOrder);
             console.log(newJobOrder)
-			alert("Job Order No:" +newJobOrder);
+			//alert("Job Order No:" +newJobOrder);
 			
         },
         error:function(xhr){
