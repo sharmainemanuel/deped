@@ -322,10 +322,10 @@ function getId(){
 				newJobOrder = prevJobOrder +1;
 				data += response[i].fld_jobOrder;
             }
-            $('#job-order').html(data)
+            //$('#job-order').html(data)
      $('#job-order').val(newJobOrder);
             console.log(newJobOrder)
-			alert("Job Order No:" +newJobOrder);
+			alert("Job Order No:");
 			
         },
         error:function(err){
