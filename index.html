@@ -107,15 +107,9 @@
                         alert("Invalid credentials");    
                     }
                 },
-				  error: function (xmlHttpRequest, textStatus, errorThrown) {
-					if(xmlHttpRequest.readyState == 0 || xmlHttpRequest.status == 0){ 
-						return;  // it's not really an error
-						}
-					else{
-					// Do normal error handling
-					alert(xmlHttpRequest.readyState);
-					}
-                }
+				  fail: function (error) {
+					alert(error);
+				}
             });
         });
     </script>
