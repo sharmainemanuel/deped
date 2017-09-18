@@ -98,7 +98,6 @@
 			alert("hello "+user);
             $.ajax({
                 url: "https://johnrayopulento.000webhostapp.com/deped/login.php?username="+user+"&password="+pass,
-                method: "GET",
                 success: function(result){
                     //alert(result);
                     if(result == "success"){
@@ -108,9 +107,8 @@
                         alert("Invalid credentials");    
                     }
                 },
-                error: function(result){
-                	console.log(result);
-					alert(result);
+             error:function (xhr, status, error){
+					alert( "status=" + xhr.responseText + ", status=" + status + ", error=" + error );
 					location.href = 'home.html'; 
                 }
             });
