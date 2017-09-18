@@ -310,9 +310,10 @@ function office(){
 function getId(){
         $.ajax({
         url:"https://johnrayopulento.000webhostapp.com/deped/getJobId.php",
-        dataType:"json",
+       
         method:"GET",
-        success:function(response){
+        success:function(res){
+			var result = JSON.parse(res);
 			alert(response);
             var data ="";
 			var prevJobOrder= "";
