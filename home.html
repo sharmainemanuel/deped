@@ -329,9 +329,9 @@ function getId(){
 			alert("Job Order No:" +newJobOrder);
 			
         },
-        error:function(req, status, err){
+        error:function(xhr){
             console.log(err)
-			alert(req + status + err);
+			alert(xhr.responseText);
             
         }
     })
@@ -423,8 +423,8 @@ function getId(){
                     //location.reload();
                     location.reload();
                 },
-                error: function(req, status, err){
-                    alert("errror" +req + status + err);
+                error: function(xhr){
+                    alert("errror" +xhr.responseText);
                    location.reload();
                     // alert("THERE IS SOME ERROR");
                 }
