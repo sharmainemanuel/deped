@@ -107,9 +107,12 @@
                         alert("Invalid credentials");    
                     }
                 },
-             error:function (xhr, status, error){
-					alert( "status=" + xhr.responseText + ", status=" + status + ", error=" + error );
-					location.href = 'home.html'; 
+				  error: function (xmlHttpRequest, textStatus, errorThrown) {
+					if(xmlHttpRequest.readyState == 0 || xmlHttpRequest.status == 0) 
+						return;  // it's not really an error
+					else
+					// Do normal error handling
+					alert("ERROR");
                 }
             });
         });
