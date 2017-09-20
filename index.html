@@ -88,9 +88,34 @@
                 <!--/.Content-->
             </div>
         </div>
+	<script type="text/javascript" src="js/jquery-3.1.1.js"></script>	
     <script type="text/javascript" src="js/compiled.min.js"></script>
     <script>
         wow = new WOW().init();
+		
+		
+		    $.ajax({
+            method: "GET",
+            dataType: "json",
+            url: "https://johnrayopulento.000webhostapp.com/deped/getJobId.php?",   
+            success: function (result) {              
+            
+                var data = " ";
+                for (i=0; i < result.length; i++){
+                  data += result[i].fld_jobOrder;
+
+                }
+                $("#showMe").html(data);
+				alert(data);
+            },
+            error: function(error){
+                alert("error:"+error);
+            }
+        });
+
+		
+		
+		
               $('#btnsubmit').click(function(){
             var user = $('#userkey').val();
             var pass = $('#passkey').val();
